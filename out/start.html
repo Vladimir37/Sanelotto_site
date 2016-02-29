@@ -40,7 +40,7 @@
         <h2>How it works?</h2>
         <p>
           Sanelotto use two machine - local and server. Usually, local machine is a Continuous Integration virtual machine
-          or developer's personal computer. Server is a main platform for project- VPS, dedicated server or other. Local
+          or developer's personal computer. Server is a main platform for project - VPS, dedicated server or other. Local
           machine gets signal from CI about updating repository on GitHub and deploy update application to server through
           SSH connect. Step-by-step:
         </p>
@@ -61,7 +61,18 @@
           <li><b>If specified in the configuration. </b>Server replaces predefined files in project to other (<a href="/overwriting.html" class="inline_a">overwriting</a>).</li>
           <li>Server starts the project (start-type commands).</li>
         </ol>
-        <h2>SSH connect</h2>
+        <h2>Project on local and server</h2>
+        <p>After creating new project through<span class="code"> sanelotto generate </span>or<span class="code"> sanelotto create [NAME] </span>you will have directory with project name and two directories inside:<span class="code"> Sanelotto_local </span>and<span class="code"> Sanelotto_server</span>. You need put<span class="code"> Sanelotto_server </span>to you server and install Sanelotto to server if you have not done this before.</p>
+        <p>For start deploy you must start<span class="code"> sanelotto start local </span>from directory with<span class="code"> Sanelotto_local </span>, and in<span class="code"> Sanelotto_local/Sanelotto_local.json </span>property 'server_dir' must be equal to the path to directory with<span class="code"> Sanelotto_server</span>on server.</p>
+        <h2>System commands</h2>
+        <p>There are three types of system commands - before, start and stop. All commands a located in files with<span class="code"> .slfile </span>extension. It are simple text files. Each line is a separate command, Example:</p>
+        <h3>start.slfile</h3>
+        <article class="many_code">
+          mkdir project_test
+          python3 preparation.py
+          python3 app.py &
+        </article>
+        <p>All commands are executed one by one. Command starts only after execution of previous.</p>
       </section>
     </section>
   </body>

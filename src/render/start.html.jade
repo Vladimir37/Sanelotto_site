@@ -27,7 +27,7 @@ block content
             | — delete Sanelotto.
     h2 How it works?
     p Sanelotto use two machine - local and server. Usually, local machine is a Continuous Integration virtual machine
-        | or developer's personal computer. Server is a main platform for project- VPS, dedicated server or other. Local
+        | or developer's personal computer. Server is a main platform for project - VPS, dedicated server or other. Local
         | machine gets signal from CI about updating repository on GitHub and deploy update application to server through
         | SSH connect. Step-by-step:
     ol
@@ -66,4 +66,24 @@ block content
         span.code=' Sanelotto_local '
         | and
         span.code=' Sanelotto_server'
-        | .
+        | . You need put
+        span.code=' Sanelotto_server '
+        | to you server and install Sanelotto to server if you have not done this before.
+    p For start deploy you must start
+        span.code=' sanelotto start local '
+        | from directory with
+        span.code=' Sanelotto_local '
+        | , and in
+        span.code=' Sanelotto_local/Sanelotto_local.json '
+        | property 'server_dir' must be equal to the path to directory with
+        span.code=' Sanelotto_server'
+        | on server.
+    h2 System commands
+    p There are three types of system commands - before, start and stop. All commands a located in files with
+        span.code=' .slfile '
+        | extension. It are simple text files. Each line is a separate command, Example:
+    h3 start.slfile
+    article.many_code mkdir project_test
+        | python3 preparation.py
+        | python3 app.py &
+    p All commands are executed one by one. Command starts only after execution of previous.

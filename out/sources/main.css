@@ -12,6 +12,11 @@ h2 {
   font-size: 18px;
   font-weight: bold;
 }
+h3 {
+  font-size: 17px;
+  font-weight: bold;
+  font-style: italic;
+}
 ul.main_list li {
   margin-bottom: 10px;
 }
@@ -49,6 +54,13 @@ ul.secondary_list li {
   color: #006400;
   background: white;
   border: 1px solid black;
+}
+.content .many_code {
+  color: #006400;
+  background: white;
+  border: 1px solid black;
+  white-space: pre-wrap;
+  width: 45%;
 }
 a {
   color: inherit;
