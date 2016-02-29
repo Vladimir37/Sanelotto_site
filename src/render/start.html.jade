@@ -1,0 +1,69 @@
+extends ../layouts/layout
+
+block content
+    h1 Start
+    p After installing you can use Sanelotto. For autodeploy Sanelotto must be installed on local machine and server.
+    h2 Main commands
+    ul.main_list
+        li
+            b='sanelotto help '
+            | — a short list of commands.
+        li
+            b='sanelotto create [NAME] '
+            | — create a project template with the specified name. You will need to edit configuration files.
+        li
+            b='sanelotto generate '
+            | — Sanelotto asks you a few questions, and then created project based on your answers.
+        li
+            b='sanelotto start [TYPE] '
+            | — start deploy. Detailed steps you can read below. Types:
+            ul.secondary_list
+                li
+                    b local
+                li
+                    b server
+        li
+            b='sanelotto uninstall '
+            | — delete Sanelotto.
+    h2 How it works?
+    p Sanelotto use two machine - local and server. Usually, local machine is a Continuous Integration virtual machine
+        | or developer's personal computer. Server is a main platform for project- VPS, dedicated server or other. Local
+        | machine gets signal from CI about updating repository on GitHub and deploy update application to server through
+        | SSH connect. Step-by-step:
+    ol
+        li As a result of an update Sanelotto run on local machine -
+            span.code=' sanelotto start local'
+        li
+            b='If specified in the configuration. '
+            | Local machine run predefined (before-type) commands.
+        li Local machine connect to server through SSH-key or login/pass authentication.
+        li Local machine start server part through
+            span.code=' sanelotto start server '
+            | and disconnect.
+        ol
+            li
+                b='If project not exist on server. '
+                | Server download project from GitHub.
+            li
+                b='If project exist on server. '
+                ol
+                    li Server update project from GitHub.
+                    li
+                        b='If specified in the configuration. '
+                        | Server run stop-type commands.
+        li
+            b='If specified in the configuration. '
+            | Server replaces predefined files in project to other (
+            a(href="/overwriting.html").inline_a overwriting
+            | ).
+        li Server starts the project (start-type commands).
+    h2 Project on local and server
+    p After creating new project through
+        span.code=' sanelotto generate '
+        | or
+        span.code=' sanelotto create [NAME] '
+        | you will have directory with project name and two directories inside:
+        span.code=' Sanelotto_local '
+        | and
+        span.code=' Sanelotto_server'
+        | .

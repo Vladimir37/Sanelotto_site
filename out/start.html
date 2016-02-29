@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Sanelotto</title>
+    <meta name="description" content="Sanelotto - application for auto-deploying. Sanelotto works in conjunction with Continuous-Integration systems.">
+    <meta name="keywords" content="Sanelotto, CI, Continuous, Integration. Python, Node, Ruby, deploy, autodeploy">
+    <link rel="stylesheet" href="/sources/main.css">
+    <script src="/sources/main.js"></script>
+  </head>
+  <body>
+    <section class="header">
+      <section class="wrapper"></section>
+      <!--    img(src="/src/img/logo/logo.png" alt="logo_img")-->
+      <!--    img(src="/src/img/logo/text.png" alt="text_logo")-->
+    </section>
+    <section class="content">
+      <section class="wrapper wrapper_content">
+        <article class="menu"><a href="/">
+            <nav><b>Home</b></nav></a><a href="/install.html">
+            <nav>Install</nav></a><a href="/start.html">
+            <nav>Start</nav></a><a href="/config.html">
+            <nav>Settings</nav></a><a href="/overwriting.html">
+            <nav class="last_nav">Overwriting</nav></a></article>
+        <h1>Start</h1>
+        <p>After installing you can use Sanelotto. For autodeploy Sanelotto must be installed on local machine and server.</p>
+        <h2>Main commands</h2>
+        <ul class="main_list">
+          <li><b>sanelotto help </b>— a short list of commands.</li>
+          <li><b>sanelotto create [NAME] </b>— create a project template with the specified name. You will need to edit configuration files.</li>
+          <li><b>sanelotto generate </b>— Sanelotto asks you a few questions, and then created project based on your answers.</li>
+          <li><b>sanelotto start [TYPE] </b>— start deploy. Detailed steps you can read below. Types:
+            <ul class="secondary_list">
+              <li><b>local</b></li>
+              <li><b>server</b></li>
+            </ul>
+          </li>
+          <li><b>sanelotto uninstall </b>— delete Sanelotto.</li>
+        </ul>
+        <h2>How it works?</h2>
+        <p>
+          Sanelotto use two machine - local and server. Usually, local machine is a Continuous Integration virtual machine
+          or developer's personal computer. Server is a main platform for project- VPS, dedicated server or other. Local
+          machine gets signal from CI about updating repository on GitHub and deploy update application to server through
+          SSH connect. Step-by-step:
+        </p>
+        <ol>
+          <li>As a result of an update Sanelotto run on local machine -<span class="code"> sanelotto start local</span></li>
+          <li><b>If specified in the configuration. </b>Local machine run predefined (before-type) commands.</li>
+          <li>Local machine connect to server through SSH-key or login/pass authentication.</li>
+          <li>Local machine start server part through<span class="code"> sanelotto start server </span>and disconnect.</li>
+          <ol>
+            <li><b>If project not exist on server. </b>Server download project from GitHub.</li>
+            <li><b>If project exist on server. </b>
+              <ol>
+                <li>Server update project from GitHub.</li>
+                <li><b>If specified in the configuration. </b>Server run stop-type commands.</li>
+              </ol>
+            </li>
+          </ol>
+          <li><b>If specified in the configuration. </b>Server replaces predefined files in project to other (<a href="/overwriting.html" class="inline_a">overwriting</a>).</li>
+          <li>Server starts the project (start-type commands).</li>
+        </ol>
+        <h2>SSH connect</h2>
+      </section>
+    </section>
+  </body>
+</html>

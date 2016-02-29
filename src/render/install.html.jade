@@ -1,0 +1,25 @@
+extends ../layouts/layout
+
+block content
+    h1 Install
+    p You can install Sanelotto on any Linux-based system.
+    h2 Dependencies
+    ul
+        li Python 3.x
+        li git
+    h2 Download
+    p First of all, download latest version Sanelotto.
+    a(href="/sanelotto_install.sh" download)
+        article.but_download Version 1.1
+    h2 Installing
+    p For installing you must have right to write in
+        span.code=' /usr/local/bin/ '
+        | and
+        span.code=' /usr/share/'
+        | . If you do not have these right, use 'sudo'.
+    p Start
+        span.code=' sanelotto_install.sh '
+        | through terminal. After start console will display installing process. It does not take a lot of time.
+    p='If there was no errors, you can move to '
+        a(href="/start.html").inline_a start
+        |.
