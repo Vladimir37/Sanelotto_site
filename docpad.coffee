@@ -3,7 +3,7 @@
 
 # Define the DocPad Configuration
 docpadConfig = {
-	# ...
+	port: 49003
 }
 
 # Export the DocPad Configuration
