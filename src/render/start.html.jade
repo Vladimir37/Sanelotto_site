@@ -43,7 +43,11 @@ block content
         ol
             li
                 b='If project not exist on server. '
-                | Server download project from GitHub.
+                ol
+                    li Server download project from GitHub..
+                    li
+                        b='If specified in the configuration. '
+                        | Server run first-type commands.
             li
                 b='If project exist on server. '
                 ol
@@ -79,13 +83,16 @@ block content
         span.code=' Sanelotto_server '
         | on server.
     h2 System commands
-    p There are three types of system commands - before, start and stop. All commands a located in files with
+    p There are four types of system commands - before, first, start and stop. All commands a located in files with
         span.code=' .slfile '
         | extension. It are simple text files. Each line is a separate command, Example:
     h3 start.slfile
     article.many_code mkdir project_test
         | python3 preparation.py
         | python3 app.py &
+    p Before-type executed on local before connect to server, first-type executed after first download project from GitHub,
+        | stop-type executed after updating project from GitHub, start-type executed after downloading or updating from GitHub.
+        | Any type of command can be disabled through configuration file.
     p All commands are executed one by one. Command starts only after execution of previous.
     p='Now you can move to '
         a(href="/config.html").inline_a Settings
