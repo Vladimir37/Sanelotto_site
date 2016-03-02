@@ -64,7 +64,7 @@ block content
             | — overwriting some files in project after downloading or updating through GitHub. true/false
         li
             b='configs_dir '
-            | — directory containing the files for overwriting.
+            | — directory containing the files for overwriting. Default: 'app'
         li
             b='first_commands '
             | — use system commands after first downloading from GitHub. true/false.
@@ -84,4 +84,42 @@ block content
             b='commands_dir '
             | — directory containing
             span.code=' .slfile '
-            | files with commands.
+            | files with commands. Default: 'files'
+
+    p Keep in mind that configuration
+        span.code=' .json '
+        | files must be located in
+        span.code=' Sanelotto_local '
+        | or
+        span.code=' Sanelotto_server '
+        | directories. You must run command
+        span.code=' sanelotto start [TYPE] '
+        | from directory that contains
+        span.code=' Sanelotto_local '
+        | or
+        span.code=' Sanelotto_server '
+        | , not configuration file. Example:
+    h3 Path on local machine
+    p
+        span.code='/home/username/apps/myproject/Sanelotto_local/Sanelotto_local.json'
+    p
+        | You must run
+        span.code=' sanelotto start local'
+        | from
+        span.code=' myproject'
+        | directory.
+    p
+        | Property 'server_dir' in
+        span.code=' Sanelotto_local.json '
+        | must contains absolutely path on server to directory, contained the
+        span.code=' Sanelotto_server '
+        |. Example:
+    h3 Path on server
+    p
+        span.code='/home/username/apps/myproject/Sanelotto_server/Sanelotto_server.json'
+    p
+        | In local machine file
+        span.code=' Sanelotto_local.json '
+        | must contains line
+    p
+        span.code='"server_dir": "/home/username/apps/myproject/"'
