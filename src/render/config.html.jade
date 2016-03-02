@@ -3,7 +3,45 @@ extends ../layouts/layout
 block content
     h1 Settings
     p You can configure your deploy script through configuration files
-        span.code=' sanelotto_local.json '
+        span.code=' Sanelotto_local.json '
         | on local machine and
         span.code=' Sanelotto_server.json '
-        | on server.
+        | on server. Let's look at all properties at these files.
+    h3 Sanelotto_local/Sanelotto_local.json
+    ul
+        li
+            b='name '
+            | — name of yor project.
+        li
+            b='server '
+            | — IP address of your server.
+        li
+            b='ssh_key '
+            | — whether to use a authentication through SSH-key? true/false
+        li
+            b='login '
+            | — your login on server.
+        li
+            b='pass '
+            | — your password on server. When 'ssh_key: true' this property is irrelevance.
+        li
+            b='before_start_commands '
+            | — do you need to execute commands from
+            span.code=' before.slfile '
+            | before connection to server? true/false
+        li
+            b='before_start_dir '
+            | — directory containing the
+            span.code=' before.slfile'
+            | .
+        li
+            b='use_sudo '
+            | — whether to use 'sudo' before all commands? true/false
+        li
+            b='logging '
+            | — whether to save all logs to text files? true/false
+        li
+            b='server_dir '
+            | — directory on server containing the
+            span.code=' Sanelotto_server'
+            |.
