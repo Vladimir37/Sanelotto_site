@@ -11,7 +11,7 @@ block content
     ul
         li
             b='name '
-            | — name of yor project.
+            | — name of your project.
         li
             b='server '
             | — IP address of your server.
@@ -45,3 +45,43 @@ block content
             | — directory on server containing the
             span.code=' Sanelotto_server'
             |.
+    h3 Sanelotto_server/Sanelotto_server.json
+    ul
+        li
+            b='name '
+            | — name of your project.
+        li
+            b='github_user '
+            | — username on GitHub.
+        li
+            b='github_repo '
+            | — name of repository on GitHub.
+        li
+            b='branch '
+            | — branch on your repository. 'Master' by default.
+        li
+            b='rewrite_configs '
+            | — overwriting some files in project after downloading or updating through GitHub. true/false
+        li
+            b='configs_dir '
+            | — directory containing the files for overwriting.
+        li
+            b='first_commands '
+            | — use system commands after first downloading from GitHub. true/false.
+        li
+            b='start_commands '
+            | — use system commands after first downloading and updating from GitHub. true/false
+        li
+            b='stop_commands '
+            | — use system commands after updating from GitHub. true/false
+        li
+            b='use_sudo '
+            | — whether to use 'sudo' before all commands? true/false
+        li
+            b='logging '
+            | — whether to save all logs to text files? true/false
+        li
+            b='commands_dir '
+            | — directory containing
+            span.code=' .slfile '
+            | files with commands.
