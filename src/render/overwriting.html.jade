@@ -1,3 +1,38 @@
 extends ../layouts/layout
 
 block content
+    h1 Overwriting
+    p
+        | Sometimes you need to change or create files in project before start without saving them on GitHub.
+        | These can be configuration files contains passwords or other private information. Sanelotto included a system
+        | for overwriting files in project to files in Sanelotto directory.
+    p
+        | If overwrite mode is active, you can find 'files' directory in
+        span.code=' Sanelotto_server '
+        | . There is the
+        span.code=' __main__.json '
+        | inside it. This file contains information about files for overwriting. Information is recorder as follows:
+    p
+        span.code=' "filename": "/absolutely/path/to/desired/place/newfile.extension" '
+    p
+        | The file is read from the
+        span.code=' Sanelotto_server/files/ '
+        | and writes to path from
+        span.code=' __main__.json'
+        | . Example:
+    h3 __main__.json
+    article.many_code {
+        |   "pass.json": "/home/username/apps/myproject/pass.json",
+        |   "database_config.xml": "/home/username/apps/myproject/db/config/db_pass.xml",
+        |   "Licence": "/home/username/apps/myproject/other_data/Full_license.txt"
+        | }
+    p
+        | The directory
+        span.code=' Sanelotto_server/files/ '
+        | must contained four files:
+    article.many_code __main__.json
+        | pass.json
+        | database_config
+        | Licence
+    p
+        | These files will be written to new addresses under new names.
