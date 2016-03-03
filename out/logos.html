@@ -5,9 +5,11 @@
     <title>Sanelotto</title>
     <meta name="description" content="Sanelotto - application for auto-deploying. Sanelotto works in conjunction with Continuous-Integration systems.">
     <meta name="keywords" content="Sanelotto, CI, Continuous, Integration. Python, Node, Ruby, deploy, autodeploy">
+    <link rel="stylesheet" href="/sources/bootstrap.css">
+    <link rel="stylesheet" href="/sources/bootstrap-theme.css">
     <link rel="stylesheet" href="/sources/main.css">
-    <script src="/sources/main.js"></script>
   </head>
+  <script src="/sources/main.js"></script>
   <body>
     <section class="header">
       <section class="wrapper"></section>
@@ -16,13 +18,19 @@
     </section>
     <section class="content">
       <section class="wrapper wrapper_content">
-        <article class="menu"><a href="/">
-            <nav><b>Home</b></nav></a><a href="/install.html">
-            <nav>Install</nav></a><a href="/start.html">
-            <nav>Start</nav></a><a href="/config.html">
-            <nav>Settings</nav></a><a href="/overwriting.html">
-            <nav>Overwriting</nav></a><a href="/logos.html">
-            <nav class="last_nav">Logos</nav></a></article>
+        <nav role="navigation" class="navbar navbar-default">
+          <article class="container-fluid">
+            <ul class="nav navbar-nav">
+              <li><a href="/">
+                  <article><b>Home</b></article></a></li>
+              <li><a href="/install.html">Install</a></li>
+              <li><a href="/start.html">Start</a></li>
+              <li><a href="/config.html">Settings</a></li>
+              <li><a href="/overwriting.html">Overwriting</a></li>
+              <li><a href="/logos.html">Logos</a></li>
+            </ul>
+          </article>
+        </nav>
         <h1>Logos</h1>
         <figure>
           <figcaption>512x512</figcaption><a href="/logos/logo_max.png"><img src="/logos/logo_max.png" alt="logo1"></a>

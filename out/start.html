@@ -5,9 +5,11 @@
     <title>Sanelotto</title>
     <meta name="description" content="Sanelotto - application for auto-deploying. Sanelotto works in conjunction with Continuous-Integration systems.">
     <meta name="keywords" content="Sanelotto, CI, Continuous, Integration. Python, Node, Ruby, deploy, autodeploy">
+    <link rel="stylesheet" href="/sources/bootstrap.css">
+    <link rel="stylesheet" href="/sources/bootstrap-theme.css">
     <link rel="stylesheet" href="/sources/main.css">
-    <script src="/sources/main.js"></script>
   </head>
+  <script src="/sources/main.js"></script>
   <body>
     <section class="header">
       <section class="wrapper"></section>
@@ -16,13 +18,19 @@
     </section>
     <section class="content">
       <section class="wrapper wrapper_content">
-        <article class="menu"><a href="/">
-            <nav><b>Home</b></nav></a><a href="/install.html">
-            <nav>Install</nav></a><a href="/start.html">
-            <nav>Start</nav></a><a href="/config.html">
-            <nav>Settings</nav></a><a href="/overwriting.html">
-            <nav>Overwriting</nav></a><a href="/logos.html">
-            <nav class="last_nav">Logos</nav></a></article>
+        <nav role="navigation" class="navbar navbar-default">
+          <article class="container-fluid">
+            <ul class="nav navbar-nav">
+              <li><a href="/">
+                  <article><b>Home</b></article></a></li>
+              <li><a href="/install.html">Install</a></li>
+              <li><a href="/start.html">Start</a></li>
+              <li><a href="/config.html">Settings</a></li>
+              <li><a href="/overwriting.html">Overwriting</a></li>
+              <li><a href="/logos.html">Logos</a></li>
+            </ul>
+          </article>
+        </nav>
         <h1>Start</h1>
         <p>After installing you can use Sanelotto. For autodeploy Sanelotto must be installed on local machine and server.</p>
         <h2>Main commands</h2>
@@ -36,6 +44,7 @@
               <li><b>server</b></li>
             </ul>
           </li>
+          <li><b>sanelotto version </b>— print current Sanelotto version.</li>
           <li><b>sanelotto uninstall </b>— delete Sanelotto.</li>
         </ul>
         <h2>How it works?</h2>
@@ -43,7 +52,7 @@
           Sanelotto use two machine - local and server. Usually, local machine is a Continuous Integration virtual machine
           or developer's personal computer. Server is a main platform for project - VPS, dedicated server or other. Local
           machine gets signal from CI about updating repository on GitHub and deploy update application to server through
-          SSH connect. Step-by-step:
+          SSH connect.<b> All local changes will be removed during the update. </b>Step-by-step:
         </p>
         <ol>
           <li>As a result of an update Sanelotto run on local machine -<span class="code"> sanelotto start local</span></li>

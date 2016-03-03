@@ -23,13 +23,18 @@ block content
                 li
                     b server
         li
+            b='sanelotto version '
+            | — print current Sanelotto version.
+        li
             b='sanelotto uninstall '
             | — delete Sanelotto.
     h2 How it works?
     p Sanelotto use two machine - local and server. Usually, local machine is a Continuous Integration virtual machine
         | or developer's personal computer. Server is a main platform for project - VPS, dedicated server or other. Local
         | machine gets signal from CI about updating repository on GitHub and deploy update application to server through
-        | SSH connect. Step-by-step:
+        | SSH connect.
+        b=' All local changes will be removed during the update. '
+        | Step-by-step:
     ol
         li As a result of an update Sanelotto run on local machine -
             span.code=' sanelotto start local'

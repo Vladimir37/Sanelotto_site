@@ -36,10 +36,6 @@ ul.secondary_list li {
 .header {
   height: 100px;
 }
-.content .menu {
-  text-align: center;
-  border-bottom: 1px solid black;
-}
 .content .but_download {
   width: 200px;
   text-align: center;
@@ -64,24 +60,11 @@ ul.secondary_list li {
 }
 a {
   color: inherit;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 .inline_a {
   color: #006400;
   text-decoration: underline;
-}
-nav {
-  margin: 0;
-  display: inline-block;
-  padding: 4px 5px;
-  border-left: 1px solid black;
-  margin-left: -5px;
-}
-nav.last_nav {
-  border-right: 1px solid black;
-}
-nav.active_nav {
-  background: grey;
 }
 figure {
   display: inline-block;
