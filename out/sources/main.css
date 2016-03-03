@@ -34,17 +34,11 @@ ul.secondary_list li {
   border-right: 2px solid black;
 }
 .header {
-  height: 100px;
+  height: 148px;
+  vertical-align: middle;
 }
-.content .but_download {
-  width: 200px;
-  text-align: center;
-  margin: 0 auto;
-  padding: 10px;
-  font-size: 20px;
-  font-weight: bold;
-  background: #006400;
-  color: white;
+.header img {
+  margin-right: 15px;
 }
 .content .code {
   color: #006400;
@@ -67,10 +61,8 @@ a {
   text-decoration: underline;
 }
 figure {
-  display: inline-block;
   height: 159px;
   width: 138px;
-  border: 1px solid black;
   padding: 5px;
   text-align: center;
   vertical-align: top;

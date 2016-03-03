@@ -2,28 +2,34 @@ extends ../layouts/layout
 
 block content
     h1 Logos
-    figure
-        figcaption 512x512
-        a(href='/logos/logo_max.png')
-            img(src='/logos/logo_max.png' alt='logo1')
-    figure
-        figcaption 256x256
-        a(href='/logos/logo_more_mid.png')
-            img(src='/logos/logo_more_mid.png' alt='logo2')
-    figure
-        figcaption 128x128
-        a(href='/logos/logo_mid.png')
-            img(src='/logos/logo_mid.png' alt='logo3')
-    br
-    figure
-        figcaption 32x32
-        a(href='/logos/logo_min.png')
-            img(src='/logos/logo_min.png' alt='logo4')
-    figure
-        figcaption 512x512 light
-        a(href='/logos/logo_light.png')
-            img(src='/logos/logo_light.png' alt='logo5')
-    figure
-        figcaption 399x61 text
-        a(href='/logos/logo_text.png')
-            img(src='/logos/logo_text.png' alt='logo6')
+    section.row
+        article.col-sm-6.col-md-4
+            figure.thumbnail
+                figcaption 512x512
+                a(href='/logos/logo_max.png')
+                    img(src='/logos/logo_max.png' alt='logo1')
+        article.col-sm-6.col-md-4
+            figure.thumbnail
+                figcaption 256x256
+                a(href='/logos/logo_more_mid.png')
+                    img(src='/logos/logo_more_mid.png' alt='logo2')
+        article.col-sm-6.col-md-4
+            figure.thumbnail
+                figcaption 128x128
+                a(href='/logos/logo_mid.png')
+                    img(src='/logos/logo_mid.png' alt='logo3')
+        article.col-sm-6.col-md-4
+            figure.thumbnail
+                figcaption 32x32
+                a(href='/logos/logo_min.png')
+                    img(src='/logos/logo_min.png' alt='logo4')
+        article.col-sm-6.col-md-4
+            figure.thumbnail
+                figcaption 512x512 light
+                a(href='/logos/logo_light.png')
+                    img(src='/logos/logo_light.png' alt='logo5')
+        article.col-sm-6.col-md-4
+            figure.thumbnail
+                figcaption 399x61 text
+                a(href='/logos/logo_text.png')
+                    img(src='/logos/logo_text.png' alt='logo6')
