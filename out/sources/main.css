@@ -62,7 +62,7 @@ a {
 }
 .inline_a {
   color: #006400;
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 figure {
   height: 159px;

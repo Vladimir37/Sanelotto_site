@@ -8,6 +8,24 @@ block content
     p After creating project you will get two directories - for local machine (usually virtual machine on Continuous
         | Integration service) and for server. During the update repository on GitHub local part make a SSH connection with
         | server part and update project on server.
+    section.row
+        article.col-md-6
+            h2 Features
+            ul
+                li SSH connection through SSH-key or login/password
+                li Four types custom commands: before connection, after first downloading, after updating, after first downloading and updating
+                li Automatically overwriting chosen files
+                li Optional detailed logging
+        article.col-md-6
+            h2 Benefits
+            ul
+                li Simple and fast
+                li Multilanguage
+                li Full Open Source
+                li Crossplatform
+                li For any CI services
+                li Highly customizable through configuration files
+
     article.git_card
-        .github-card(data-theme='medium', data-height='280', data-width='400', data-github='Vladimir37/Sanelotto')
-        script(src='//cdn.jsdelivr.net/github-cards/latest/widget.js')
+            .github-card(data-theme='medium', data-height='280', data-width='400', data-github='Vladimir37/Sanelotto')
+            script(src='//cdn.jsdelivr.net/github-cards/latest/widget.js')
