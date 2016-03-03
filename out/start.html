@@ -21,7 +21,8 @@
             <nav>Install</nav></a><a href="/start.html">
             <nav>Start</nav></a><a href="/config.html">
             <nav>Settings</nav></a><a href="/overwriting.html">
-            <nav class="last_nav">Overwriting</nav></a></article>
+            <nav>Overwriting</nav></a><a href="/logos.html">
+            <nav class="last_nav">Logos</nav></a></article>
         <h1>Start</h1>
         <p>After installing you can use Sanelotto. For autodeploy Sanelotto must be installed on local machine and server.</p>
         <h2>Main commands</h2>
@@ -50,7 +51,12 @@
           <li>Local machine connect to server through SSH-key or login/pass authentication.</li>
           <li>Local machine start server part through<span class="code"> sanelotto start server </span>and disconnect.</li>
           <ol>
-            <li><b>If project not exist on server. </b>Server download project from GitHub.</li>
+            <li><b>If project not exist on server. </b>
+              <ol>
+                <li>Server download project from GitHub..</li>
+                <li><b>If specified in the configuration. </b>Server run first-type commands.</li>
+              </ol>
+            </li>
             <li><b>If project exist on server. </b>
               <ol>
                 <li>Server update project from GitHub.</li>
@@ -65,13 +71,18 @@
         <p>After creating new project through<span class="code"> sanelotto generate </span>or<span class="code"> sanelotto create [NAME] </span>you will have directory with project name and two directories inside:<span class="code"> Sanelotto_local </span>and<span class="code"> Sanelotto_server</span>. You need put<span class="code"> Sanelotto_server </span>to you server and install Sanelotto to server if you have not done this before.</p>
         <p>For start deploy you must start<span class="code"> sanelotto start local </span>from directory with<span class="code"> Sanelotto_local </span>, and in<span class="code"> Sanelotto_local/Sanelotto_local.json </span>property 'server_dir' must be equal to the path to directory with<span class="code"> Sanelotto_server </span>on server.</p>
         <h2>System commands</h2>
-        <p>There are three types of system commands - before, start and stop. All commands a located in files with<span class="code"> .slfile </span>extension. It are simple text files. Each line is a separate command, Example:</p>
+        <p>There are four types of system commands - before, first, start and stop. All commands a located in files with<span class="code"> .slfile </span>extension. It are simple text files. Each line is a separate command, Example:</p>
         <h3>start.slfile</h3>
         <article class="many_code">
           mkdir project_test
           python3 preparation.py
           python3 app.py &
         </article>
+        <p>
+          Before-type executed on local before connect to server, first-type executed after first download project from GitHub,
+          stop-type executed after updating project from GitHub, start-type executed after downloading or updating from GitHub.
+          Any type of command can be disabled through configuration file.
+        </p>
         <p>All commands are executed one by one. Command starts only after execution of previous.</p>
         <p>Now you can move to <a href="/config.html" class="inline_a">Settings</a> or<a href="/overwriting.html" class="inline_a">Overwriting</a>.</p>
       </section>

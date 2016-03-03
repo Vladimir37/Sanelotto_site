@@ -21,7 +21,33 @@
             <nav>Install</nav></a><a href="/start.html">
             <nav>Start</nav></a><a href="/config.html">
             <nav>Settings</nav></a><a href="/overwriting.html">
-            <nav class="last_nav">Overwriting</nav></a></article>
+            <nav>Overwriting</nav></a><a href="/logos.html">
+            <nav class="last_nav">Logos</nav></a></article>
+        <h1>Overwriting</h1>
+        <p>
+          Sometimes you need to change or create files in project before start without saving them on GitHub.
+          These can be configuration files contains passwords or other private information. Sanelotto included a system
+          for overwriting files in project to files in Sanelotto directory.
+        </p>
+        <p>If overwrite mode is active, you can find 'files' directory in<span class="code"> Sanelotto_server </span>. There is the<span class="code"> __main__.json </span>inside it. This file contains information about files for overwriting. Information is recorder as follows:</p>
+        <p><span class="code"> &quot;filename&quot;: &quot;/absolutely/path/to/desired/place/newfile.extension&quot; </span></p>
+        <p>The file is read from the<span class="code"> Sanelotto_server/files/ </span>and writes to path from<span class="code"> __main__.json</span>. Example:</p>
+        <h3>__main__.json</h3>
+        <article class="many_code">
+          {
+            "pass.json": "/home/username/apps/myproject/pass.json",
+            "database_config.xml": "/home/username/apps/myproject/db/config/db_pass.xml",
+            "Licence": "/home/username/apps/myproject/other_data/Full_license.txt"
+          }
+        </article>
+        <p>The directory<span class="code"> Sanelotto_server/files/ </span>must contained four files:</p>
+        <article class="many_code">
+          __main__.json
+          pass.json
+          database_config
+          Licence
+        </article>
+        <p>These files will be written to new addresses under new names.</p>
       </section>
     </section>
   </body>

@@ -21,9 +21,48 @@
             <nav>Install</nav></a><a href="/start.html">
             <nav>Start</nav></a><a href="/config.html">
             <nav>Settings</nav></a><a href="/overwriting.html">
-            <nav class="last_nav">Overwriting</nav></a></article>
+            <nav>Overwriting</nav></a><a href="/logos.html">
+            <nav class="last_nav">Logos</nav></a></article>
         <h1>Settings</h1>
-        <p>TEST</p>
+        <p>You can configure your deploy script through configuration files<span class="code"> Sanelotto_local.json </span>on local machine and<span class="code"> Sanelotto_server.json </span>on server. Let's look at all properties at these files.</p>
+        <h3>Sanelotto_local/Sanelotto_local.json</h3>
+        <ul>
+          <li><b>name </b>— name of your project.</li>
+          <li><b>server </b>— IP address of your server.</li>
+          <li><b>ssh_key </b>— whether to use a authentication through SSH-key? true/false</li>
+          <li><b>login </b>— your login on server.</li>
+          <li><b>pass </b>— your password on server. When 'ssh_key: true' this property is irrelevance.</li>
+          <li><b>before_start_commands </b>— do you need to execute commands from<span class="code"> before.slfile </span>before connection to server? true/false</li>
+          <li><b>before_start_dir </b>— directory containing the<span class="code"> before.slfile</span>.</li>
+          <li><b>use_sudo </b>— whether to use 'sudo' before all commands? true/false</li>
+          <li><b>logging </b>— whether to save all logs to text files? true/false</li>
+          <li><b>server_dir </b>— directory on server containing the<span class="code"> Sanelotto_server</span>.</li>
+        </ul>
+        <h3>Sanelotto_server/Sanelotto_server.json</h3>
+        <ul>
+          <li><b>name </b>— name of your project.</li>
+          <li><b>github_user </b>— username on GitHub.</li>
+          <li><b>github_repo </b>— name of repository on GitHub.</li>
+          <li><b>branch </b>— branch on your repository. 'Master' by default.</li>
+          <li><b>rewrite_configs </b>— overwriting some files in project after downloading or updating through GitHub. true/false</li>
+          <li><b>configs_dir </b>— directory containing the files for overwriting. Default: 'app'</li>
+          <li><b>first_commands </b>— use system commands after first downloading from GitHub. true/false.</li>
+          <li><b>start_commands </b>— use system commands after first downloading and updating from GitHub. true/false</li>
+          <li><b>stop_commands </b>— use system commands after updating from GitHub. true/false</li>
+          <li><b>use_sudo </b>— whether to use 'sudo' before all commands? true/false</li>
+          <li><b>logging </b>— whether to save all logs to text files? true/false</li>
+          <li><b>commands_dir </b>— directory containing<span class="code"> .slfile </span>files with commands. Default: 'files'</li>
+        </ul>
+        <p>Keep in mind that configuration<span class="code"> .json </span>files must be located in<span class="code"> Sanelotto_local </span>or<span class="code"> Sanelotto_server </span>directories. You must run command<span class="code"> sanelotto start [TYPE] </span>from directory that contains<span class="code"> Sanelotto_local </span>or<span class="code"> Sanelotto_server </span>, not configuration file. Example:</p>
+        <h3>Path on local machine</h3>
+        <p><span class="code">/home/username/apps/myproject/Sanelotto_local/Sanelotto_local.json</span></p>
+        <p>You must run<span class="code"> sanelotto start local </span>from<span class="code"> myproject </span>directory.</p>
+        <p>Property 'server_dir' in<span class="code"> Sanelotto_local.json </span>must contains absolutely path on server to directory, contained the<span class="code"> Sanelotto_server </span>. Example:</p>
+        <h3>Path on server</h3>
+        <p><span class="code">/home/username/apps/myproject/Sanelotto_server/Sanelotto_server.json</span></p>
+        <p>In local machine file<span class="code"> Sanelotto_local.json </span>must contains line</p>
+        <p><span class="code">&quot;server_dir&quot;: &quot;/home/username/apps/myproject/&quot;</span></p>
+        <p>Now you can learn more about<a href="/overwriting">Overwriting</a>.</p>
       </section>
     </section>
   </body>
