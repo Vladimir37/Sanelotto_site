@@ -30,8 +30,8 @@ ul.secondary_list li {
 }
 .wrapper_content {
   padding-top: 0;
-  border-left: 2px solid black;
-  border-right: 2px solid black;
+  border-left: 2px solid #41ced2;
+  border-right: 2px solid #41ced2;
 }
 .header {
   height: 148px;
@@ -51,6 +51,10 @@ ul.secondary_list li {
   border: 1px solid black;
   white-space: pre-wrap;
   width: 75%;
+}
+.content .git_card {
+  padding: 20px;
+  text-align: center;
 }
 a {
   color: inherit;

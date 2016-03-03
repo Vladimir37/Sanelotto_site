@@ -1,4 +1,5 @@
 @green: darkgreen;
+@main: #41CED2;
 
 body {
     margin: 0;
@@ -37,8 +38,8 @@ ul.secondary_list li {
     padding: 10px;
     &_content {
         padding-top: 0;
-        border-left: 2px solid black;
-        border-right: 2px solid black;
+        border-left: 2px solid @main;
+        border-right: 2px solid @main;
     }
 }
 
@@ -62,6 +63,10 @@ ul.secondary_list li {
         border: 1px solid black;
         white-space: pre-wrap;
         width: 75%;
+    }
+    .git_card {
+        padding: 20px;
+        text-align: center;
     }
 }
 
