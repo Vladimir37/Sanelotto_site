@@ -2,18 +2,15 @@ extends ../layouts/layout
 
 block content
     h1 Sanelotto — deployment tool for any languages
-    p Sanelotto developed for fast and simple deploy applications to server.
-    p Sanelotto is suitable for any languages and any frameworks. Configuring is extremely simple - only need to change
-        | JSON configuration files and enter the desired commands on the desired language.
-    p After creating project you will get two directories - for local machine (usually virtual machine on Continuous
-        | Integration service) and for server. During the update repository on GitHub local part make a SSH connection with
-        | server part and update project on server.
+    p Sanelotto is developed for fast and easy application deployment on the server.
+    p Sanelotto is suitable for any frameworks and languages. The setup is quite easy - you need to simply edit the JSON configuration files and enter any comands on any desired language.
+    p After creating the project you will get two directories, one for the local machine (usually a virtual machine on Continuous Integration service) and one for the server. The local part connects to the server through SHH after updating the repository on GitHub. After that, the local part updates the project on the server.
     section.row
         article.col-md-6
             h2 Features
             ul
                 li SSH connection through SSH-key or login/password
-                li Four types custom commands: before connection, after first downloading, after updating, after first downloading and updating
+                li Four types of custom commands: before the connection, after the first download, after updating, after the first downloading and updating
                 li Automatically overwriting chosen files
                 li Optional detailed logging
         article.col-md-6
